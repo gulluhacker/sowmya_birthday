@@ -1,130 +1,83 @@
 /* =====================================================
    SOWMYA BIRTHDAY WEBSITE
-   GLOBAL JAVASCRIPT
+   UNIVERSAL JAVASCRIPT
 ===================================================== */
 
 
 /* =====================================================
-   PAGE NAVIGATION
+   PAGE LOAD
 ===================================================== */
 
-function goToPage(page) {
-    window.location.href = page;
-}
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("Birthday website loaded successfully ❤️");
 
 
-/* =====================================================
-   SMOOTH SCROLL
-   Use this when sections exist on the same page
-===================================================== */
+    /* ---------------------------------------------
+       REVEAL ANIMATIONS
+    --------------------------------------------- */
 
-function scrollToSection(id) {
+    const reveals =
+        document.querySelectorAll(".reveal");
 
-    const section = document.getElementById(id);
+    reveals.forEach(function (element, index) {
 
-    if (!section) return;
-
-    section.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-}
-
-
-/* =====================================================
-   BUTTON PRESS EFFECT
-===================================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const buttons = document.querySelectorAll("button, .btn");
-
-    buttons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            if ("vibrate" in navigator) {
-                navigator.vibrate(20);
-            }
-
-        });
+        element.style.animationDelay =
+            (index * 0.12) + "s";
 
     });
 
-});
 
+    /* ---------------------------------------------
+       FINAL PAGE
+    --------------------------------------------- */
 
-/* =====================================================
-   PAGE ENTER ANIMATION
-===================================================== */
+    if (
+        document.querySelector(".firework")
+    ) {
 
-document.addEventListener("DOMContentLoaded", () => {
+        createExtraFireworks();
 
-    const elements = document.querySelectorAll(".reveal");
-
-    elements.forEach((element, index) => {
-
-        setTimeout(() => {
-
-            element.classList.add("visible");
-
-        }, 150 + (index * 100));
-
-    });
-
-});
-
-
-/* =====================================================
-   CREATE FLOATING PARTICLES
-===================================================== */
-
-function createParticles(container, amount = 15) {
-
-    if (!container) return;
-
-    for (let i = 0; i < amount; i++) {
-
-        const particle = document.createElement("span");
-
-        particle.className = "particle";
-
-        particle.style.left =
-            Math.random() * 100 + "%";
-
-        particle.style.top =
-            Math.random() * 100 + "%";
-
-        particle.style.animationDelay =
-            Math.random() * 5 + "s";
-
-        particle.style.animationDuration =
-            (4 + Math.random() * 4) + "s";
-
-        container.appendChild(particle);
     }
-}
-
-
-/* =====================================================
-   AUTO PARTICLES
-===================================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    document
-        .querySelectorAll(".particles")
-        .forEach(container => {
-
-            createParticles(container, 12);
-
-        });
 
 });
 
 
 /* =====================================================
-   CANDLE SYSTEM
+   EXTRA FIREWORKS
+===================================================== */
+
+function createExtraFireworks() {
+
+    const container =
+        document.body;
+
+    for (let i = 0; i < 8; i++) {
+
+        const firework =
+            document.createElement("div");
+
+        firework.className =
+            "firework";
+
+        firework.style.left =
+            Math.random() * 90 + "%";
+
+        firework.style.top =
+            Math.random() * 75 + "%";
+
+        firework.style.animationDelay =
+            Math.random() * 3 + "s";
+
+        container.appendChild(firework);
+
+    }
+
+}
+
+
+/* =====================================================
+   CANDLE FUNCTION
 ===================================================== */
 
 function blowCandles() {
@@ -132,48 +85,66 @@ function blowCandles() {
     const candles =
         document.querySelectorAll(".candle");
 
-    if (!candles.length) return;
+    const message =
+        document.getElementById(
+            "wishMessage"
+        );
 
-    candles.forEach(candle => {
+    const button =
+        document.getElementById(
+            "blowButton"
+        );
+
+    const finalButton =
+        document.getElementById(
+            "finalButton"
+        );
+
+
+    /* Turn candles off */
+
+    candles.forEach(function (candle) {
 
         candle.classList.add("off");
 
     });
 
-    const message =
-        document.getElementById("wishMessage");
+
+    /* Message */
 
     if (message) {
 
-        message.textContent =
+        message.innerHTML =
             "Wish made... ✨❤️";
 
     }
 
-}
+
+    /* Button */
+
+    if (button) {
+
+        button.disabled = true;
+
+        button.style.opacity =
+            "0.5";
+
+        button.innerHTML =
+            "Wish Made ✨";
+
+    }
 
 
-/* =====================================================
-   RESET CANDLES
-===================================================== */
+    /* Show final button */
 
-function resetCandles() {
+    if (finalButton) {
 
-    const candles =
-        document.querySelectorAll(".candle");
+        setTimeout(function () {
 
-    candles.forEach(candle => {
+            finalButton.style.display =
+                "inline-flex";
 
-        candle.classList.remove("off");
-
-    });
-
-    const message =
-        document.getElementById("wishMessage");
-
-    if (message) {
-
-        message.textContent = "";
+        }, 1000);
 
     }
 
@@ -181,237 +152,56 @@ function resetCandles() {
 
 
 /* =====================================================
-   TYPEWRITER EFFECT
+   MAKE WISH
+   Used by the new Page 5
 ===================================================== */
 
-function typeWriter(
-    element,
-    text,
-    speed = 45
-) {
+function makeWish() {
 
-    if (!element) return;
-
-    element.textContent = "";
-
-    let index = 0;
-
-    function write() {
-
-        if (index < text.length) {
-
-            element.textContent +=
-                text.charAt(index);
-
-            index++;
-
-            setTimeout(write, speed);
-
-        }
-
-    }
-
-    write();
-}
-
-
-/* =====================================================
-   HEARTS EFFECT
-===================================================== */
-
-function createHeart() {
-
-    const heart =
-        document.createElement("div");
-
-    heart.innerHTML = "♡";
-
-    heart.style.position = "fixed";
-    heart.style.left =
-        Math.random() * 100 + "vw";
-
-    heart.style.bottom = "-30px";
-
-    heart.style.fontSize =
-        (15 + Math.random() * 25) + "px";
-
-    heart.style.color =
-        "#f3a88e";
-
-    heart.style.pointerEvents =
-        "none";
-
-    heart.style.zIndex = "9999";
-
-    heart.style.transition =
-        "transform 5s linear, opacity 5s linear";
-
-    document.body.appendChild(heart);
-
-    requestAnimationFrame(() => {
-
-        heart.style.transform =
-            `translateY(-110vh) rotate(${Math.random() * 180}deg)`;
-
-        heart.style.opacity = "0";
-
-    });
-
-    setTimeout(() => {
-
-        heart.remove();
-
-    }, 5000);
-}
-
-
-/* =====================================================
-   HEART RAIN
-===================================================== */
-
-function startHeartRain(duration = 5000) {
-
-    const interval =
-        setInterval(() => {
-
-            createHeart();
-
-        }, 350);
-
-    setTimeout(() => {
-
-        clearInterval(interval);
-
-    }, duration);
+    blowCandles();
 
 }
 
 
 /* =====================================================
-   FINAL SURPRISE
+   OPEN FINAL SURPRISE
 ===================================================== */
 
-function finalSurprise() {
+function openFinalSurprise() {
 
-    startHeartRain(7000);
+    console.log(
+        "Opening final surprise..."
+    );
 
-    const title =
-        document.querySelector(".final-title");
 
-    if (title) {
+    /*
+       Direct navigation to Page 6
+    */
 
-        title.classList.add("reveal");
-
-    }
+    window.location.href =
+        "./page6.html";
 
 }
 
 
 /* =====================================================
-   FIREWORKS
-===================================================== */
-
-function createFirework() {
-
-    const firework =
-        document.createElement("div");
-
-    firework.className =
-        "firework";
-
-    firework.style.left =
-        (10 + Math.random() * 80) + "%";
-
-    firework.style.top =
-        (10 + Math.random() * 70) + "%";
-
-    firework.style.animationDelay =
-        Math.random() + "s";
-
-    document.body.appendChild(firework);
-
-    setTimeout(() => {
-
-        firework.remove();
-
-    }, 3000);
-}
-
-
-/* =====================================================
-   FIREWORK SHOW
-===================================================== */
-
-function startFireworks(duration = 7000) {
-
-    const interval =
-        setInterval(() => {
-
-            createFirework();
-
-        }, 700);
-
-    setTimeout(() => {
-
-        clearInterval(interval);
-
-    }, duration);
-
-}
-
-
-/* =====================================================
-   BIRTHDAY FINALE
+   FINAL CELEBRATION
 ===================================================== */
 
 function birthdayFinale() {
 
-    startFireworks(8000);
-
-    startHeartRain(8000);
+    createExtraFireworks();
 
 }
 
 
 /* =====================================================
-   PAGE LOAD
+   BACK TO HOME
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+function goHome() {
 
-    document.body.classList.add("page-loaded");
-
-});
-
-
-/* =====================================================
-   PREVENT DOUBLE CLICK
-===================================================== */
-
-function preventDoubleClick(button) {
-
-    if (!button) return;
-
-    button.disabled = true;
-
-    setTimeout(() => {
-
-        button.disabled = false;
-
-    }, 1000);
-
-}
-
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-function backToTop() {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    window.location.href =
+        "./index.html";
 
 }
