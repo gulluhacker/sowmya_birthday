@@ -1,1 +1,280 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080406"
+    >
+
+    <title>Make A Wish 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     PAGE 5 — MAKE A WISH
+========================================= -->
+
+<section class="page">
+
+
+    <!-- Background Glow -->
+
+    <div class="glow"></div>
+
+
+    <!-- Particles -->
+
+    <div class="particles">
+
+        <span
+            class="particle"
+            style="left:8%; top:18%;"
+        ></span>
+
+        <span
+            class="particle"
+            style="left:20%; top:75%; animation-delay:1s;"
+        ></span>
+
+        <span
+            class="particle"
+            style="left:45%; top:10%; animation-delay:2s;"
+        ></span>
+
+        <span
+            class="particle"
+            style="left:78%; top:25%; animation-delay:1.5s;"
+        ></span>
+
+        <span
+            class="particle"
+            style="left:91%; top:70%; animation-delay:3s;"
+        ></span>
+
+    </div>
+
+
+    <!-- Main Content -->
+
+    <main class="content">
+
+
+        <!-- Label -->
+
+        <div class="label reveal">
+
+            04 — MAKE A WISH
+
+        </div>
+
+
+        <!-- Heading -->
+
+        <h1
+            class="title reveal"
+            style="margin-top:25px;"
+        >
+
+            Make A Wish
+
+        </h1>
+
+
+        <p class="subtitle reveal">
+
+            Close your eyes...
+
+            <br>
+
+            Think of something beautiful.
+
+            <br>
+
+            And make your wish. ✨
+
+        </p>
+
+
+        <!-- =================================
+             CAKE
+        ================================= -->
+
+        <div
+            class="cake reveal"
+            id="birthdayCake"
+        >
+
+
+            <!-- Candle 1 -->
+
+            <div
+                class="candle"
+                id="candle1"
+            >
+
+                <div class="flame"></div>
+
+            </div>
+
+
+            <!-- Candle 2 -->
+
+            <div
+                class="candle"
+                id="candle2"
+            >
+
+                <div class="flame"></div>
+
+            </div>
+
+
+            <!-- Candle 3 -->
+
+            <div
+                class="candle"
+                id="candle3"
+            >
+
+                <div class="flame"></div>
+
+            </div>
+
+
+            <!-- Cake -->
+
+            <div class="cake-top"></div>
+
+            <div class="cream"></div>
+
+            <div class="cake-body"></div>
+
+
+        </div>
+
+
+        <!-- Wish Button -->
+
+        <button
+            class="btn reveal"
+            id="blowButton"
+            onclick="blowCandles(); showWish();"
+        >
+
+            Blow The Candles
+
+            <span style="margin-left:10px;">
+                🕯️
+            </span>
+
+        </button>
+
+
+        <!-- Wish Result -->
+
+        <div
+            id="wishMessage"
+            class="wish-message"
+        ></div>
+
+
+        <!-- Final Button -->
+
+        <a
+            href="page6.html"
+            class="btn reveal"
+            id="finalButton"
+            style="
+                display:none;
+                margin-top:20px;
+            "
+        >
+
+            Your Final Surprise
+
+            <span style="margin-left:10px;">
+                🎆
+            </span>
+
+        </a>
+
+
+    </main>
+
+
+</section>
+
+
+<!-- =========================================
+     PAGE 5 SCRIPT
+========================================= -->
+
+<script src="script.js"></script>
+
+
+<script>
+
+function showWish() {
+
+    const message =
+        document.getElementById("wishMessage");
+
+    const button =
+        document.getElementById("blowButton");
+
+    const finalButton =
+        document.getElementById("finalButton");
+
+
+    /* Birthday message */
+
+    message.innerHTML =
+        "Wish made... ✨❤️";
+
+
+    /* Prevent pressing again */
+
+    button.disabled = true;
+
+    button.style.opacity = "0.5";
+
+    button.innerHTML =
+        "Wish Made ✨";
+
+
+    /* Show final button */
+
+    setTimeout(() => {
+
+        finalButton.style.display =
+            "inline-flex";
+
+        finalButton.style.animation =
+            "pageEnter 1s ease forwards";
+
+    }, 900);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
