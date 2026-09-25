@@ -1,105 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Happy Birthday Sowmya ❤️</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    <title>Happiest Birthday Sowmya ❤️</title>
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background: #080406;
-            color: white;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .container {
-            padding: 30px;
-        }
-
-        .small {
-            letter-spacing: 3px;
-            font-size: 12px;
-            opacity: .6;
-        }
-
-        h1 {
-            font-size: clamp(40px, 10vw, 80px);
-            margin: 25px 0 5px;
-        }
-
-        .name {
-            font-size: clamp(35px, 9vw, 70px);
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        p {
-            line-height: 1.8;
-            font-size: 18px;
-            opacity: .8;
-        }
-
-        .start {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 16px 30px;
-            border-radius: 50px;
-            background: white;
-            color: #080406;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-            position: relative;
-            z-index: 99999;
-        }
-
-        .start:active {
-            transform: scale(.96);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <section class="page">
 
-        <div class="small">
-            A LITTLE SOMETHING FOR YOU
+        <div class="glow"></div>
+
+        <!-- Floating particles -->
+        <div class="particles">
+
+            <span class="particle p1"></span>
+            <span class="particle p2"></span>
+            <span class="particle p3"></span>
+            <span class="particle p4"></span>
+            <span class="particle p5"></span>
+
         </div>
 
-        <h1>
-            Happiest Birthday
-        </h1>
 
-        <div class="name">
-            Sowmya ❤️
-        </div>
+        <main class="content">
 
-        <p>
-            Today isn't just another day...
-            <br>
-            It's a day to celebrate someone very special.
-        </p>
+            <div class="label">
+                A LITTLE SOMETHING FOR YOU
+            </div>
 
-        <a
-            class="start"
-            href="page2.html"
-        >
-            Begin The Celebration ✨
-        </a>
 
-    </div>
+            <h1 class="title">
+                Happiest Birthday
+            </h1>
+
+
+            <div class="script-name">
+                Sowmya
+            </div>
+
+
+            <div class="divider"></div>
+
+
+            <p class="subtitle">
+
+                Today isn't just another day...
+
+                <br>
+
+                It's a day to celebrate
+
+                <br>
+
+                <span>
+                    someone very special. ❤️
+                </span>
+
+            </p>
+
+
+            <!-- DIRECT PAGE 2 LINK -->
+
+            <a
+                href="page2.html"
+                class="btn"
+            >
+                Begin The Celebration
+
+                <span>
+                    ✨
+                </span>
+
+            </a>
+
+
+            <p class="small-note">
+                A little journey made just for you
+            </p>
+
+        </main>
+
+    </section>
 
 </body>
+
 </html>
