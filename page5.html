@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,77 +21,52 @@
 
 </head>
 
-
 <body>
-
-
-<!-- =========================================
-     PAGE 5 — MAKE A WISH
-========================================= -->
 
 <section class="page">
 
-
-    <!-- Background Glow -->
-
     <div class="glow"></div>
-
-
-    <!-- Particles -->
 
     <div class="particles">
 
+        <span class="particle" style="left:8%;top:18%;"></span>
+
         <span
             class="particle"
-            style="left:8%; top:18%;"
+            style="left:20%;top:75%;animation-delay:1s;"
         ></span>
 
         <span
             class="particle"
-            style="left:20%; top:75%; animation-delay:1s;"
+            style="left:45%;top:10%;animation-delay:2s;"
         ></span>
 
         <span
             class="particle"
-            style="left:45%; top:10%; animation-delay:2s;"
+            style="left:78%;top:25%;animation-delay:1.5s;"
         ></span>
 
         <span
             class="particle"
-            style="left:78%; top:25%; animation-delay:1.5s;"
-        ></span>
-
-        <span
-            class="particle"
-            style="left:91%; top:70%; animation-delay:3s;"
+            style="left:91%;top:70%;animation-delay:3s;"
         ></span>
 
     </div>
 
 
-    <!-- Main Content -->
-
     <main class="content">
 
 
-        <!-- Label -->
-
         <div class="label reveal">
-
             04 — MAKE A WISH
-
         </div>
 
-
-        <!-- Heading -->
 
         <h1
             class="title reveal"
             style="margin-top:25px;"
         >
-
             Make A Wish
-
         </h1>
 
 
@@ -111,53 +85,36 @@
         </p>
 
 
-        <!-- =================================
-             CAKE
-        ================================= -->
+        <!-- CAKE -->
 
         <div
             class="cake reveal"
             id="birthdayCake"
         >
 
-
-            <!-- Candle 1 -->
-
             <div
                 class="candle"
                 id="candle1"
             >
-
                 <div class="flame"></div>
-
             </div>
 
-
-            <!-- Candle 2 -->
 
             <div
                 class="candle"
                 id="candle2"
             >
-
                 <div class="flame"></div>
-
             </div>
 
-
-            <!-- Candle 3 -->
 
             <div
                 class="candle"
                 id="candle3"
             >
-
                 <div class="flame"></div>
-
             </div>
 
-
-            <!-- Cake -->
 
             <div class="cake-top"></div>
 
@@ -165,16 +122,15 @@
 
             <div class="cake-body"></div>
 
-
         </div>
 
 
-        <!-- Wish Button -->
+        <!-- BLOW BUTTON -->
 
         <button
             class="btn reveal"
             id="blowButton"
-            onclick="blowCandles(); showWish();"
+            onclick="makeWish()"
         >
 
             Blow The Candles
@@ -186,7 +142,7 @@
         </button>
 
 
-        <!-- Wish Result -->
+        <!-- WISH MESSAGE -->
 
         <div
             id="wishMessage"
@@ -194,11 +150,11 @@
         ></div>
 
 
-        <!-- Final Button -->
+        <!-- FINAL BUTTON -->
 
         <a
-            href="page6.html"
-            class="btn reveal"
+            href="./page6.html"
+            class="btn"
             id="finalButton"
             style="
                 display:none;
@@ -217,38 +173,45 @@
 
     </main>
 
-
 </section>
 
-
-<!-- =========================================
-     PAGE 5 SCRIPT
-========================================= -->
 
 <script src="script.js"></script>
 
 
 <script>
 
-function showWish() {
+function makeWish() {
 
-    const message =
-        document.getElementById("wishMessage");
+    const candles =
+        document.querySelectorAll(".candle");
 
     const button =
         document.getElementById("blowButton");
+
+    const message =
+        document.getElementById("wishMessage");
 
     const finalButton =
         document.getElementById("finalButton");
 
 
-    /* Birthday message */
+    /* Turn off candles */
+
+    candles.forEach(function(candle) {
+
+        candle.classList.add("off");
+
+    });
+
+
+    /* Show message */
 
     message.innerHTML =
         "Wish made... ✨❤️";
 
 
-    /* Prevent pressing again */
+    /* Disable button */
 
     button.disabled = true;
 
@@ -260,15 +223,12 @@ function showWish() {
 
     /* Show final button */
 
-    setTimeout(() => {
+    setTimeout(function() {
 
         finalButton.style.display =
             "inline-flex";
 
-        finalButton.style.animation =
-            "pageEnter 1s ease forwards";
-
-    }, 900);
+    }, 1000);
 
 }
 
