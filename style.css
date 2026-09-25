@@ -1,1 +1,752 @@
+/* =====================================================
+   SOWMYA BIRTHDAY WEBSITE
+   GLOBAL STYLES
+===================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
+:root {
+    --bg: #080406;
+    --bg2: #14070b;
+    --rose: #f3a88e;
+    --rose-light: #ffd3c1;
+    --gold: #e5b28e;
+    --text: #f8e9e1;
+    --muted: #bca9a2;
+    --border: rgba(255, 190, 165, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Cormorant Garamond", serif;
+    overflow-x: hidden;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================================
+   COMMON SECTION
+===================================================== */
+
+.page {
+    min-height: 100svh;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(125, 35, 52, 0.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #050304,
+            #18070c,
+            #050304
+        );
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.glow {
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 105, 80, 0.07);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    animation: breathingGlow 6s ease-in-out infinite;
+}
+
+@keyframes breathingGlow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.particles {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #ffd8c5;
+
+    box-shadow:
+        0 0 8px #ffae8b,
+        0 0 18px rgba(255, 110, 80, 0.6);
+
+    animation: particleFloat 5s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+
+    0%,
+    100% {
+        opacity: 0.15;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-25px);
+    }
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content {
+    position: relative;
+    z-index: 5;
+
+    width: min(100%, 700px);
+
+    text-align: center;
+
+    animation: pageEnter 1.5s ease forwards;
+}
+
+@keyframes pageEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   SMALL LABEL
+===================================================== */
+
+.label {
+    font-size: 13px;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    color: #ae8e83;
+}
+
+
+/* =====================================================
+   MAIN NAME
+===================================================== */
+
+.script-name {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(75px, 22vw, 150px);
+
+    line-height: 0.95;
+
+    color: var(--rose-light);
+
+    text-shadow:
+        0 0 20px rgba(255, 120, 90, 0.3),
+        0 0 60px rgba(255, 90, 70, 0.12);
+}
+
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+}
+
+.title {
+    font-size: clamp(40px, 10vw, 75px);
+
+    line-height: 1.05;
+
+    color: var(--text);
+}
+
+.subtitle {
+    margin-top: 20px;
+
+    font-size: clamp(18px, 5vw, 25px);
+
+    line-height: 1.6;
+
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.divider {
+    width: 90px;
+    height: 1px;
+
+    margin: 28px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
+}
+
+
+/* =====================================================
+   PREMIUM BUTTON
+===================================================== */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 56px;
+
+    padding: 12px 28px;
+
+    margin-top: 35px;
+
+    border-radius: 50px;
+
+    border: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(105, 35, 45, 0.45),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    color: #f9e4d9;
+
+    font-size: 18px;
+
+    letter-spacing: 1.5px;
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    background:
+        rgba(255, 130, 100, 0.08);
+
+    box-shadow:
+        0 15px 40px rgba(255, 90, 70, 0.15);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card {
+    width: min(100%, 680px);
+
+    padding: 40px 30px;
+
+    border: 1px solid rgba(255, 190, 165, 0.18);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter {
+    font-size: 21px;
+
+    line-height: 1.8;
+
+    color: #ddcdc6;
+}
+
+.signature {
+    margin-top: 30px;
+
+    text-align: right;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 42px;
+
+    color: var(--rose);
+}
+
+
+/* =====================================================
+   MEMORY GRID
+===================================================== */
+
+.memory-grid {
+    width: min(100%, 950px);
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    margin: 40px auto;
+}
+
+.memory-card {
+    position: relative;
+
+    min-height: 270px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255, 190, 165, 0.2);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(130, 45, 60, 0.35),
+            rgba(20, 5, 10, 0.9)
+        );
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 20px;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.memory-card::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -55%);
+
+    font-size: 90px;
+
+    color: rgba(255, 190, 165, 0.08);
+}
+
+.memory-card span {
+    position: relative;
+    z-index: 2;
+
+    font-size: 18px;
+
+    color: #e4d2ca;
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+.cake {
+    position: relative;
+
+    width: 220px;
+    height: 170px;
+
+    margin: 60px auto 30px;
+}
+
+.cake-body {
+    position: absolute;
+
+    bottom: 5px;
+    left: 15px;
+
+    width: 190px;
+    height: 85px;
+
+    border-radius:
+        0 0 25px 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7f2938,
+            #d06b67,
+            #8b303c
+        );
+
+    box-shadow:
+        0 20px 35px rgba(0, 0, 0, 0.4);
+}
+
+.cake-top {
+    position: absolute;
+
+    top: 55px;
+    left: 10px;
+
+    width: 200px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            #f3ad91,
+            #b95256
+        );
+
+    z-index: 2;
+}
+
+.cream {
+    position: absolute;
+
+    top: 76px;
+    left: 20px;
+
+    width: 180px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #ffe2d1;
+
+    z-index: 3;
+}
+
+.candle {
+    position: absolute;
+
+    top: 8px;
+
+    width: 11px;
+    height: 65px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d58d79,
+            #fff0df,
+            #d58d79
+        );
+
+    z-index: 5;
+}
+
+.candle:nth-child(1) {
+    left: 65px;
+}
+
+.candle:nth-child(2) {
+    left: 105px;
+}
+
+.candle:nth-child(3) {
+    left: 145px;
+}
+
+
+/* =====================================================
+   FLAME
+===================================================== */
+
+.flame {
+    position: absolute;
+
+    width: 14px;
+    height: 21px;
+
+    left: -1px;
+    top: -22px;
+
+    background: #ffad49;
+
+    border-radius:
+        50% 50% 50% 0;
+
+    transform: rotate(-45deg);
+
+    box-shadow:
+        0 0 12px #ff963e,
+        0 0 25px rgba(255, 100, 40, 0.8);
+
+    animation:
+        flameFlicker 0.6s infinite alternate;
+}
+
+@keyframes flameFlicker {
+
+    from {
+        transform:
+            rotate(-45deg)
+            scale(0.9);
+    }
+
+    to {
+        transform:
+            rotate(-45deg)
+            scale(1.1);
+    }
+}
+
+.candle.off .flame {
+    display: none;
+}
+
+
+/* =====================================================
+   WISH MESSAGE
+===================================================== */
+
+.wish-message {
+    min-height: 35px;
+
+    margin-top: 20px;
+
+    font-size: 23px;
+
+    color: var(--rose);
+}
+
+
+/* =====================================================
+   FIREWORK
+===================================================== */
+
+.firework {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #ffc8ae;
+
+    box-shadow:
+        0 0 15px #ff9875,
+        0 0 35px #ff6f58;
+
+    animation:
+        firework 2.5s infinite;
+}
+
+@keyframes firework {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.2);
+    }
+
+    40% {
+        opacity: 1;
+
+        transform: scale(1);
+
+        box-shadow:
+            0 0 15px #ff9875,
+            0 0 35px #ff6f58,
+            20px 0 20px #ffb18e,
+            -20px 0 20px #ffb18e,
+            0 20px 20px #ffb18e,
+            0 -20px 20px #ffb18e;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform: scale(1.8);
+    }
+}
+
+
+/* =====================================================
+   FADE / REVEAL
+===================================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    animation:
+        revealContent 1.2s ease forwards;
+}
+
+@keyframes revealContent {
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding:
+            35px 18px;
+    }
+
+    .card {
+        padding:
+            32px 20px;
+    }
+
+    .letter {
+        font-size: 19px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .memory-card {
+        min-height: 250px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .script-name {
+        font-size:
+            clamp(75px, 25vw, 120px);
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+      }
