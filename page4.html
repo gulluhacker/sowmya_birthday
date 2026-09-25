@@ -1,55 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
 
-/* =====================================================
-   MEMORY PLACEHOLDER
-===================================================== */
+<head>
 
-.memory-placeholder {
-    position: absolute;
-    inset: 0;
+    <meta charset="UTF-8">
 
-    display: flex;
-    flex-direction: column;
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    align-items: center;
-    justify-content: center;
+    <meta
+        name="theme-color"
+        content="#080406"
+    >
 
-    text-align: center;
+    <title>Our Memories ♡</title>
 
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(170, 70, 80, 0.20),
-            transparent 60%
-        );
-}
+    <link rel="stylesheet" href="style.css">
 
-.memory-number {
-    position: absolute;
+</head>
 
-    top: 15px;
-    left: 18px;
 
-    font-size: 12px;
+<body>
 
-    letter-spacing: 3px;
+<section class="page">
 
-    color: rgba(255, 210, 195, 0.55);
-}
+    <div class="glow"></div>
 
-.memory-icon {
-    font-family: "Great Vibes", cursive;
+    <div class="particles">
 
-    font-size: 75px;
+        <span class="particle" style="left:8%; top:15%;"></span>
+        <span class="particle" style="left:20%; top:75%; animation-delay:1s;"></span>
+        <span class="particle" style="left:45%; top:10%; animation-delay:2s;"></span>
+        <span class="particle" style="left:80%; top:25%; animation-delay:1.5s;"></span>
+        <span class="particle" style="left:92%; top:70%; animation-delay:3s;"></span>
 
-    color: rgba(255, 190, 165, 0.35);
+    </div>
 
-    margin-bottom: 12px;
-}
 
-.memory-text {
-    font-size: 17px;
+    <main class="content">
 
-    letter-spacing: 1px;
 
-    color: #d9c5bd;
-}
+        <div class="label reveal">
+            03 — LITTLE MOMENTS
+        </div>
+
+
+        <h1
+            class="title reveal"
+            style="margin-top:25px;"
+        >
+            Our Memories
+        </h1>
+
+
+        <p class="subtitle reveal">
+
+            Three little glimpses of someone
+            <br>
+            who makes life a little more beautiful. ♡
+
+        </p>
+
+
+        <!-- =================================
+             PHOTO MEMORIES
+        ================================= -->
+
+        <div class="memory-grid">
+
+
+            <!-- PHOTO 1 -->
+
+            <div class="memory-card photo-memory reveal">
+
+                <img
+                    src="sowmya1.jpg"
+                    alt="Sowmya - Memory 01"
+                >
+
+                <div class="photo-overlay">
+
+                    <span>01</span>
+
+                    <p>
+                        Beautiful moments ♡
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 2 -->
+
+            <div class="memory-card photo-memory reveal">
+
+                <img
+                    src="sowmya2.jpg"
+                    alt="Sowmya - Memory 02"
+                >
+
+                <div class="photo-overlay">
+
+                    <span>02</span>
+
+                    <p>
+                        Always keep smiling ✨
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="memory-card photo-memory reveal">
+
+                <img
+                    src="sowmya3.jpg"
+                    alt="Sowmya - Memory 03"
+                >
+
+                <div class="photo-overlay">
+
+                    <span>03</span>
+
+                    <p>
+                        A moment to remember ♡
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOURTH CARD -->
+
+            <div class="memory-card memory-last reveal">
+
+                <div class="last-memory-content">
+
+                    <div class="last-heart">
+                        ∞
+                    </div>
+
+                    <h3>
+                        More memories
+                    </h3>
+
+                    <p>
+                        More laughs.
+                        <br>
+                        More moments.
+                        <br>
+                        More memories to come...
+                    </p>
+
+                    <span>
+                        ♡
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- NEXT BUTTON -->
+
+        <a
+            href="page5.html"
+            class="btn reveal"
+        >
+
+            One Last Surprise
+
+            <span style="margin-left:10px;">
+                🎂
+            </span>
+
+        </a>
+
+
+    </main>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
