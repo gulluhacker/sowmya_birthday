@@ -84,7 +84,19 @@
         </main>
 
     </section>
+<audio id="birthdayMusic" preload="auto">
+    <source src="a-thousand-years.mp3" type="audio/mpeg">
+</audio>
 
+<script>
+    const startButton = document.getElementById("startCelebration");
+    const music = document.getElementById("birthdayMusic");
+
+    startButton.addEventListener("click", function () {
+        music.volume = 0.45;
+        music.play();
+    });
+</script>
 </body>
 
 </html>
