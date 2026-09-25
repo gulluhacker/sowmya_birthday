@@ -4,35 +4,38 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Happiest Birthday Sowmya ❤️</title>
 
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <section class="page">
+    <!-- Background -->
+    <div class="background">
 
         <div class="glow"></div>
 
-        <!-- Floating particles -->
         <div class="particles">
-
             <span class="particle p1"></span>
             <span class="particle p2"></span>
             <span class="particle p3"></span>
             <span class="particle p4"></span>
             <span class="particle p5"></span>
-
+            <span class="particle p6"></span>
         </div>
 
+    </div>
 
-        <main class="content">
+
+    <!-- PAGE 1 -->
+
+    <main class="page">
+
+        <section class="hero">
 
             <div class="label">
                 A LITTLE SOMETHING FOR YOU
@@ -44,7 +47,7 @@
             </h1>
 
 
-            <div class="script-name">
+            <div class="name">
                 Sowmya
             </div>
 
@@ -69,11 +72,35 @@
             </p>
 
 
-            <!-- DIRECT PAGE 2 LINK -->
+            <!-- Music -->
 
-            <a href="page2.html" class="btn" id="startCelebration">
-    Begin The Celebration
-    <span>✨</span>
+            <audio
+                id="birthdayMusic"
+                preload="auto"
+            >
+
+                <source
+                    src="a-thousand-years.mp3"
+                    type="audio/mpeg"
+                >
+
+            </audio>
+
+
+            <!-- START BUTTON -->
+
+            <a
+                href="page2.html"
+                id="startCelebration"
+                class="btn"
+            >
+
+                Begin The Celebration
+
+                <span class="btn-icon">
+                    ✨
+                </span>
+
             </a>
 
 
@@ -81,22 +108,68 @@
                 A little journey made just for you
             </p>
 
-        </main>
+        </section>
 
-    </section>
-<audio id="birthdayMusic" preload="auto">
-    <source src="a-thousand-years.mp3" type="audio/mpeg">
-</audio>
+    </main>
 
-<script>
-    const startButton = document.getElementById("startCelebration");
-    const music = document.getElementById("birthdayMusic");
 
-    startButton.addEventListener("click", function () {
-        music.volume = 0.45;
-        music.play();
-    });
-</script>
+    <!-- Music + Navigation -->
+
+    <script>
+
+        const startButton =
+            document.getElementById("startCelebration");
+
+        const birthdayMusic =
+            document.getElementById("birthdayMusic");
+
+
+        startButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                birthdayMusic.volume = 0.45;
+
+                birthdayMusic.play()
+                    .then(function () {
+
+                        /*
+                         * Give the browser a moment
+                         * to start the music.
+                         */
+
+                        setTimeout(function () {
+
+                            window.location.href =
+                                "page2.html";
+
+                        }, 800);
+
+                    })
+
+                    .catch(function (error) {
+
+                        console.log(
+                            "Audio could not start:",
+                            error
+                        );
+
+                        /*
+                         * Even if audio fails,
+                         * Page 2 must still open.
+                         */
+
+                        window.location.href =
+                            "page2.html";
+
+                    });
+
+            });
+
+    </script>
+
 </body>
 
 </html>
