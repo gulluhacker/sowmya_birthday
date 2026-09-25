@@ -1,130 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Happy Birthday Sowmya ❤️</title>
 
-    <title>For Sowmya ♡</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #080406;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .small {
+            letter-spacing: 3px;
+            font-size: 12px;
+            opacity: .6;
+        }
+
+        h1 {
+            font-size: clamp(40px, 10vw, 80px);
+            margin: 25px 0 5px;
+        }
+
+        .name {
+            font-size: clamp(35px, 9vw, 70px);
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 18px;
+            opacity: .8;
+        }
+
+        .start {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 16px 30px;
+            border-radius: 50px;
+            background: white;
+            color: #080406;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            z-index: 99999;
+        }
+
+        .start:active {
+            transform: scale(.96);
+        }
+    </style>
 </head>
 
 <body>
 
-    <section class="page">
+    <div class="container">
 
-        <!-- Background glow -->
-        <div class="glow"></div>
-
-        <!-- Floating particles -->
-        <div class="particles">
-
-            <span
-                class="particle"
-                style="left:10%; top:20%;"
-            ></span>
-
-            <span
-                class="particle"
-                style="left:25%; top:75%; animation-delay:1s;"
-            ></span>
-
-            <span
-                class="particle"
-                style="left:48%; top:12%; animation-delay:2s;"
-            ></span>
-
-            <span
-                class="particle"
-                style="left:75%; top:25%; animation-delay:1.5s;"
-            ></span>
-
-            <span
-                class="particle"
-                style="left:90%; top:70%; animation-delay:3s;"
-            ></span>
-
+        <div class="small">
+            A LITTLE SOMETHING FOR YOU
         </div>
 
+        <h1>
+            Happiest Birthday
+        </h1>
 
-        <!-- Main content -->
+        <div class="name">
+            Sowmya ❤️
+        </div>
 
-        <main class="content">
+        <p>
+            Today isn't just another day...
+            <br>
+            It's a day to celebrate someone very special.
+        </p>
 
-            <div class="label">
-                A LITTLE SOMETHING FOR YOU
-            </div>
+        <a
+            class="start"
+            href="page2.html"
+        >
+            Begin The Celebration ✨
+        </a>
 
-
-            <h1
-                class="title"
-                style="margin-top:30px;"
-            >
-                Happiest Birthday
-            </h1>
-
-
-            <div
-                class="script-name"
-                style="margin-top:15px;"
-            >
-                Sowmya
-            </div>
-
-
-            <div class="divider"></div>
-
-
-            <p class="subtitle">
-
-                Today isn't just another day...
-
-                <br>
-
-                It's a day to celebrate
-
-                <br>
-
-                someone very special. ❤️
-
-            </p>
-
-
-            <!-- DIRECT PAGE 2 LINK -->
-
-            <a
-                href="page2.html"
-                class="btn"
-                style="margin-top:40px;"
-            >
-                Begin The Celebration
-
-                <span style="margin-left:10px;">
-                    ✨
-                </span>
-            </a>
-
-
-            <p
-                style="
-                    margin-top:18px;
-                    font-size:11px;
-                    letter-spacing:2px;
-                    color:rgba(235,215,208,0.45);
-                "
-            >
-                A little journey made just for you
-            </p>
-
-        </main>
-
-    </section>
+    </div>
 
 </body>
-
 </html>
